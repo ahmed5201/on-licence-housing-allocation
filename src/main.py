@@ -2,12 +2,20 @@ from PySide6.QtWidgets import QApplication, QLabel
 from PySide6.QtCore import Qt
 import sys
 from ui.login_page import LoginPage
+from ui.main_page import Mainpage
 
 def main():
     app= QApplication(sys.argv)
-    login = LoginPage()
-    login.exec()
-    sys.exit(0)
+    login = login = LoginPage()
+    outcome= login.exec()
+
+    if outcome == LoginPage.Accepted:
+        window=Mainpage()
+        window.show()
+        sys.exit(app.exec())
+    else:
+        sys.exit(0)
+
     welcome_text=QLabel("Welcome to the On licence Housing Allocations System")
     welcome_text.setWindowTitle("On licence Housing Allocations System")
     welcome_text.resize(400,200)
