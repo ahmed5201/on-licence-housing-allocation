@@ -6,7 +6,7 @@ from ui.main_page import Mainpage
 
 def main():
     app= QApplication(sys.argv)
-    login = login = LoginPage()
+    login = LoginPage()
     outcome= login.exec()
 
     if outcome == LoginPage.Accepted:

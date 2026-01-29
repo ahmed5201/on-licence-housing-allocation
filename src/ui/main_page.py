@@ -1,5 +1,7 @@
 from PySide6.QtWidgets import QMainWindow, QLabel
 from PySide6.QtCore import Qt
+from services.data_save import DataSave
+from ui.licencees_page import LicenceesPage
 
 class Mainpage(QMainWindow):
     def __init__(self):
@@ -10,3 +12,10 @@ class Mainpage(QMainWindow):
         label= QLabel("Main Page --- Log in ( Done )")
         label.setAlignment(Qt.AlignCenter)
         self.setCentralWidget(label)
+
+        self.store=DataSave()
+        self.licencees_page= LicenceesPage(self.store)
+        self.setCentralWidget(self.licencees_page)
+
+
+
