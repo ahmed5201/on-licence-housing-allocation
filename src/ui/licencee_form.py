@@ -34,3 +34,15 @@ class RegisterLicencee(QDialog):
         structure.addWidget(QLabel("End Date"))
         structure.addWidget(self.filled_end_date)
 
+        save_btn= QPushButton("SAVE")
+        close_btn= QPushButton("CANCEL")
+
+        save_btn.clicked.connect(self.save_clicked)
+        close_btn.clicked.connect(self.reject)
+        action_button_layout=QHBoxLayout()
+        action_button_layout.addWidget(save_btn)
+        action_button_layout.addWidget(close_btn)
+
+        structure.addLayout(action_button_layout)
+        self.setLayout(structure)
+
