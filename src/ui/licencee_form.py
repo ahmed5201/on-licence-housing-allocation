@@ -20,7 +20,7 @@ class RegisterLicencee(QDialog):
         self.filled_risk.addItems(["High","Medium","Low"])
 
         self.filled_end_date = QLineEdit()
-        self.filled.end_date.setPlaceholderText("09/10/2026")
+        self.filled_end_date.setPlaceholderText("09/10/2026")
 
         structure = QVBoxLayout()
 
@@ -45,4 +45,23 @@ class RegisterLicencee(QDialog):
 
         structure.addLayout(action_button_layout)
         self.setLayout(structure)
+
+    def save_clicked(self):
+        prison_id= self.filled_id.text().strip()
+        full_name= self.filled_name.text().strip()
+        end_date= self.filled_end_date.text().strip()
+        self.accept()
+
+        if prison_id == "" or full_name == "" or end_date =="":
+            QMessageBox.warning(self,"Missing information","Please fill the slots")
+            return
+    def get_values(self):
+        return (
+            self.filled_id.text().strip(),
+            self.filled_name.text().strip(),
+            self.filled_risk.currentText(),
+            self.filled_end_date.text().strip()
+
+        )
+        self.accept()
 

@@ -3,6 +3,9 @@ from PySide6.QtWidgets import (
     QPushButton, QTableWidget,QTableWidgetItem,QMessageBox
 )
 from services.data_save import DataSave
+from ui.licencee_form import RegisterLicencee
+from models.licencee import Licencee
+
 class LicenceesPage(QWidget):
     def __init__(self, store:DataSave):
         super().__init__()
@@ -34,7 +37,16 @@ class LicenceesPage(QWidget):
             self.table.setItem(row,3,QTableWidgetItem(str(licencee.end_date)))
 
     def add_licencee(self):
-        QMessageBox.information(self,"Info", "Form Coming Soon")
+        add_form = RegisterLicencee()
+        result = add_form.exec()
+
+        if result == RegisterLicencee.Accepted:
+            prison_id,full_name,risk_type,end_date = add_form.get_values()
+
+            new_licencee = Licencee(prison_id,full_name,risk_type,end_date)
+            self.store.licencees.append(new_licencee)
+            self.update_table()
+            self.table.resizeColumnsToContents()
 
     def delete_licencee(self):
         row =self.table.currentRow()
