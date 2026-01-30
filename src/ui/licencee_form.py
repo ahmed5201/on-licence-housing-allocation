@@ -23,4 +23,14 @@ class RegisterLicencee(QDialog):
         self.filled.end_date.setPlaceholderText("09/10/2026")
 
         structure = QVBoxLayout()
-        structure.addWidget
+
+        structure.addWidget(QLabel("Prison ID"))
+        structure.addWidget(self.filled_id)
+        structure.addWidget(QLabel("Full Name"))
+        structure.addWidget(self.filled_name)
+
+        structure.addWidget(QLabel("Risk"))
+        structure.addWidget(self.filled_risk)
+        structure.addWidget(QLabel("End Date"))
+        structure.addWidget(self.filled_end_date)
+
