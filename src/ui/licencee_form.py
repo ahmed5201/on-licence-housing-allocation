@@ -65,3 +65,4 @@ class RegisterLicencee(QDialog):
         )
         self.accept()
 
+#Ahmed Ahmadi w23054487

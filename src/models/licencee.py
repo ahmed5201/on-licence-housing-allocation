@@ -5,3 +5,4 @@ class Licencee:
         self.risk_type = risk_type
         self.end_date = end_date
 
+#Ahmed Ahmadi w23054487

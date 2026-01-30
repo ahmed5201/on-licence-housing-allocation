@@ -13,5 +13,5 @@ class Mainpage(QMainWindow):
         self.licencees_page= LicenceesPage(self.store)
         self.setCentralWidget(self.licencees_page)
 
-
+#Ahmed Ahmadi w23054487
 

@@ -57,7 +57,7 @@ class LicenceesPage(QWidget):
         self.update_table()
         self.table.resizeColumnsToContents()
 
-
+#Ahmed Ahmadi w23054487
 
 
 

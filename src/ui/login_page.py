@@ -28,3 +28,4 @@ class LoginPage(QDialog):
             QMessageBox.warning(self, "Incorrect Password", "Try Again")
             self.password_input.clear()
 
+#Ahmed Ahmadi w23054487
