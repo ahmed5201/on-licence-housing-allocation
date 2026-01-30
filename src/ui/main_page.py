@@ -9,10 +9,6 @@ class Mainpage(QMainWindow):
         self.setWindowTitle("On licence Housing Allocation System")
         self.resize(900,600)
 
-        label= QLabel("Main Page --- Log in ( Done )")
-        label.setAlignment(Qt.AlignCenter)
-        self.setCentralWidget(label)
-
         self.store=DataSave()
         self.licencees_page= LicenceesPage(self.store)
         self.setCentralWidget(self.licencees_page)
